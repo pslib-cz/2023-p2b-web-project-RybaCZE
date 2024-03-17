@@ -93,7 +93,6 @@ table {
     align-items: start;
     display: grid;
     grid-template-columns: 30% 30% 40%;
-    grid-template-rows: auto;
     gap: 5px;
   }
 
@@ -121,9 +120,6 @@ table {
     margin-top: 10px;
   }
 
-  .wrapper ul {
-    list-style: none;
-  }
   .map__iframe {
     /* filter: grayscale(0%) invert(15%) contrast(83%); */
 
@@ -144,7 +140,6 @@ table {
   }
 
   .wrapper {
-    list-style: none;
     width: 100%;
     vertical-align: middle;
     margin: auto;
@@ -155,12 +150,22 @@ table {
     padding: 0.1em 0.3em;
   }
 }
+
+.wrapper ul {
+  list-style-type: none;
+  padding-left: 0;
+}
 @media (min-width: 760px) and (max-width: 960px) {
   table th {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 2ch;
   }
+}
+
+.contact__wrapper {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }
 @media (min-width: 319px) and (max-width: 765px) {
   .map,
@@ -176,21 +181,11 @@ table {
     margin: 0;
     padding: 0;
   }
-  .footer__container {
-    margin-top: 10px;
-  }
 
-  .wrapper {
-    padding-left: 0.7em;
-    padding-right: 0.7em;
-  }
   .wrapper li {
-    margin-top: 15px;
+    margin-top: 0.85em;
   }
 
-  .wrapper ul {
-    list-style: none;
-  }
   a {
     text-decoration: none;
     color: black;
@@ -205,7 +200,6 @@ table {
   }
 
   .wrapper {
-    list-style: none;
     width: 100%;
     vertical-align: middle;
     max-width: 100%;
@@ -214,23 +208,39 @@ table {
 }
 
 @media (min-width: 2559px) {
+  .footer__container {
+    --size: 13em;
+    grid-template-rows: calc(var(--size));
+  }
   .map__iframe {
-    height: 400px;
+    height: calc(var(--size));
   }
 }
 @media (min-width: 1439px) and (max-width: 2558px) {
+  .footer__container {
+    --size: 13em;
+    grid-template-rows: calc(var(--size) + 0.1em);
+  }
   .map__iframe,
   .footer__col__map {
-    height: 318.4px;
+    height: calc(var(--size));
   }
 }
 @media (min-width: 1023px) and (max-width: 1439px) {
+  .footer__container {
+    --size: 13em;
+    grid-template-rows: calc(var(--size) + 0.5em);
+  }
   .map__iframe {
-    height: 317px;
+    height: var(--size);
   }
 }
 @media (min-width: 767px) and (max-width: 1023px) {
+  .footer__container {
+    --size: 14em;
+    grid-template-rows: calc(var(--size) + 0.1em);
+  }
   .map__iframe {
-    height: 303px;
+    height: var(--size);
   }
 }

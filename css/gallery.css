@@ -7,6 +7,9 @@
 #gallery h2 {
   text-align: center;
 }
+#gallery {
+  background: #d2d2d2;
+}
 .back {
   width: auto;
 }

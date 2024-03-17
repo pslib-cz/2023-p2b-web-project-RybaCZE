@@ -1,6 +1,6 @@
 /* OFFER */
 #offer {
-  background: #999999;
+  background: #d2d2d2;
 }
 
 .logos {
@@ -65,7 +65,11 @@
 
 .transition {
   height: 20px;
-  background: linear-gradient(180deg, #edeef0, #c1c3c6, #999999);
+  background: linear-gradient(
+    180deg,
+    rgba(237, 238, 240, 1) 0%,
+    rgba(210, 210, 210, 1) 100%
+  );
 }
 .about,
 .offer {
