@@ -1,11 +1,1 @@
-galerie vlastni html
-kontakt footer + copiright (https://brandaffair.ro/contact)
-logos are links + gaps
-navbar color orange like the steel logo
 
-
-logo flex a dat na pravo od textu a dat classi do img a ne do divu nefunguje to ocidvidne
-
-
-
-detailni produkty
