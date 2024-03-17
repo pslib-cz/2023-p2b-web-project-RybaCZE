@@ -1,0 +1,120 @@
+/* OFFER */
+#offer {
+  background: #999999;
+}
+
+.logos {
+  padding-left: 2em;
+  padding-right: 2em;
+  column-gap: 1.5em;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-rows: repeat(3, minmax(128px, auto));
+}
+.logo {
+  height: 3em;
+}
+.logo,
+.logos a {
+  width: 100%;
+  object-fit: contain;
+}
+@media (min-width: 500px) {
+  .logos {
+    row-gap: 0.5em;
+  }
+}
+.offer h2 {
+  padding-bottom: 1em;
+}
+@media (min-width: 730px) {
+  .logo {
+  }
+  .logo__stihl_a {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .logo__jikov_a {
+    grid-row: 1/2;
+
+    grid-column: 3/5;
+  }
+  .logo__fiskars_a {
+    padding-top: 1em;
+    grid-row: 2/3;
+    grid-column: 2/4;
+  }
+  .logos {
+    max-width: 1024px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+/* MAIN */
+#offer {
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1.3em;
+}
+
+.transition {
+  height: 20px;
+  background: linear-gradient(180deg, #edeef0, #c1c3c6, #999999);
+}
+.about,
+.offer {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+/* ABOUT */
+.about {
+  padding-top: 5em;
+}
+#about {
+  background-color: #edeef0;
+}
+.about__body {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  text-indent: 2em;
+  word-break: break-word;
+  word-wrap: break-word;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 760px) {
+  .about__body {
+    text-align: justify;
+  }
+}
+
+a {
+  display: block;
+}
+.about {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+@media (min-width: 1023px) {
+  .about__firm__logo {
+    max-height: 90px;
+    height: auto;
+    width: auto;
+  }
+}
+.about__images {
+  text-align: right;
+
+  padding-bottom: 1em;
+}
+.about__firm__logo {
+  max-height: 70px;
+}
