@@ -30,8 +30,6 @@
   padding-bottom: 1em;
 }
 @media (min-width: 730px) {
-  .logo {
-  }
   .logo__stihl_a {
     grid-column: 1/3;
     grid-row: 1/2;
@@ -47,7 +45,7 @@
     grid-column: 2/4;
   }
   .logos {
-    max-width: 1024px;
+    max-width: 1080px;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(4, 25%);
@@ -74,7 +72,7 @@
 .about,
 .offer {
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: 1080px;
 }
 
 /* ABOUT */
@@ -115,10 +113,9 @@ a {
   }
 }
 .about__images {
-  text-align: right;
-
   padding-bottom: 1em;
 }
 .about__firm__logo {
+  float: right;
   max-height: 70px;
 }
