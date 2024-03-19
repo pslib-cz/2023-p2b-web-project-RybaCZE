@@ -1,2 +1,7 @@
 
 pridat alt texty k obrazkum
+
+
+!! produkty vice mista nad obrazkem 
+obrazek je v karticce 
+na mobilu mensi margin u karciteck
