@@ -71,6 +71,7 @@
 .offer-section {
   margin: 0 auto;
   max-width: 1024px;
+  max-width: 1024px;
 }
 
 /* ABOUT */
@@ -111,6 +112,8 @@
   }
 }
 .about__images {
+  text-align: right;
+
   text-align: right;
 
   padding-bottom: 1em;
