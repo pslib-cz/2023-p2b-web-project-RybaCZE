@@ -1,17 +1,19 @@
 .container__cards {
+  /* Might remove later max width and margin: auto !!! */
+  max-width: 1080px;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding-top: 140px;
-  /* margin-top: 50px; */
 }
 .product-image img {
   /* max-height: 9em; */
 }
 .product-card {
-  width: 300px;
+  width: 225px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
