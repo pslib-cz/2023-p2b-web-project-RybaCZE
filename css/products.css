@@ -9,9 +9,7 @@
   gap: 20px;
   padding-top: 140px;
 }
-.product-image img {
-  /* max-height: 9em; */
-}
+
 .product-card {
   width: 225px;
   border-radius: 10px;
@@ -20,7 +18,11 @@
   box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
   background-color: #fff;
 }
-
+@media (max-width: 426px) {
+  .product-card {
+    width: 90%;
+  }
+}
 .product-image {
   height: 300px;
   overflow: hidden;

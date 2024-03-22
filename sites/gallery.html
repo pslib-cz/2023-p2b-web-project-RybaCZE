@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
-      name="description"
+      name="Opravárna Barta - Galerie"
       content="prodej a servis malé zahradní, zemědělské a lesní techniky">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/navbar.css">
@@ -78,7 +78,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto1.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto1.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -96,7 +96,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto2.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto2.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -114,7 +114,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto3.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto3.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -132,7 +132,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto4.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto4.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -150,7 +150,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto5.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto5.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -168,7 +168,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto7.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto7.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -185,7 +185,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto8.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto8.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -203,7 +203,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto9.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto9.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -220,7 +220,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto10.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto10.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -238,7 +238,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto11.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto11.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -256,7 +256,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto12.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto12.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -274,7 +274,7 @@
                   type="image/webp">
                 <source srcset="../img/jpg/foto13.jpg" type="image/jpeg">
                 <img src="../img/jpg/foto13.jpg" loading="lazy"
-                  alt="Description of the image">
+                  alt>
               </picture>
             </a>
           </div>
@@ -412,16 +412,17 @@
   <script type="module">
 			import lightgallery from 'https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/+esm'
 			import lgThumbnail from 'https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/+esm'
-			import lgPager from 'https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/pager/+esm'
 			import lgZoom from 'https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/+esm'
 			import lgAutoplay from 'https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/autoplay/+esm'
 	
 			lightgallery(document.querySelector('.gallery__items'), 
 			{
 				selector: document.querySelectorAll('.gallery__items a'),
-				plugins: [lgThumbnail, lgPager, lgZoom, lgAutoplay],
-				slideShowAutoplay: true,
+				plugins: [lgThumbnail, lgZoom, lgAutoplay],
+				slideShowAutoplay: false,
 				slideShowInterval:2000,
+        subHtmlSelectorRelative: false, 
+        allowMediaOverlap:false,
 			});
 		</script>
 
