@@ -2,11 +2,9 @@
 <html lang="cs">
     <head>
         <link rel="icon" href="../img/ico/service.png" />
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta
-            name="description"
+        <meta name="description"
             content="prodej a servis malé zahradní, zemědělské a lesní techniky">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/navbar.css">
@@ -15,7 +13,6 @@
         <link rel="stylesheet" href="../css/footer.css">
         <title>Opravárna Bárta - produkty</title>
     </head>
-
     <body>
         <div class="navbar__div">
             <header id="navbar">
@@ -23,11 +20,8 @@
                     <a href="/" class="home-link navbar__header">
                         <h1>Opravárna Bárta</h1>
                     </a>
-                    <button
-                        type="button"
-                        class="navbar-toggle"
-                        aria-label="Toggle menu"
-                        aria-expanded="false"
+                    <button type="button" class="navbar-toggle"
+                        aria-label="Toggle menu" aria-expanded="false"
                         aria-controls="navbar-menu">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -51,8 +45,11 @@
                                 <a class="navbar-link"
                                     href="./products.html">Produkty</a>
                             </li>
-                            <li class="navbar-item"><a class="navbar-link"
-                                    href="./gallery.html">Galerie</a>
+                            <li class="navbar-item">
+                                <a class="navbar-link navbar-link__cart"
+                                    id="cartButton"
+                                    href="#"
+                                    onclick="showCartModal()">Košík</a>
                             </li>
                         </menu>
                     </div>
@@ -267,9 +264,91 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../img/products/weed-killer.png"
+                            alt="Product Image">
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Herbicid</h2>
+                        <p class="product-price">349 Kč</p>
+                        <p class="product-description">Herbicid je efektivní při
+                            likvidaci plevelu v zahradě a na trávníku.</p>
+                        <div class="buttons">
+                            <button class="add-to-cart">Přidat do
+                                košíku</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../img/products/garden-hose.png"
+                            alt="Product Image">
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Zahradní hadice</h2>
+                        <p class="product-price">599 Kč</p>
+                        <p class="product-description">Zahradní hadice je vhodná
+                            pro zalévání zahrady a květináčů.</p>
+                        <div class="buttons">
+                            <button class="add-to-cart">Přidat do
+                                košíku</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../img/products/garden-gloves.png"
+                            alt="Product Image">
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Zahradnické rukavice s
+                            dlouhými rukávy</h2>
+                        <p class="product-price">249 Kč</p>
+                        <p class="product-description">Zahradnické rukavice s
+                            dlouhými rukávy poskytují ochranu proti ostrým
+                            rostlinám a hmyzu.</p>
+                        <div class="buttons">
+                            <button class="add-to-cart">Přidat do
+                                košíku</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pokračujte dalšími produkty podle potřeby -->
+
+            </div>
+        </div>
+        <!-- 
+
+
+
+
+
+
+
+
+    
+ -->
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeCartModal()">&times;</span>
+                <h2>Košík</h2>
+                <ul id="cartContent"></ul>
+                <button id="checkoutButton">Platba </button>
             </div>
         </div>
 
+        <!--  
+
+
+
+
+    
+-->
         <footer class="footer" id="contact">
             <div class="footer__container">
 
@@ -397,5 +476,6 @@
         </footer>
 
         <script src="../js/main.js"></script>
+        <script src="../js/check.js"></script>
     </body>
 </html>

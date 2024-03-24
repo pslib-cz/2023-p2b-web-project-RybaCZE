@@ -13,7 +13,11 @@
     border-bottom: 1px solid #000000;
   }
 }
-
+.navbar-link__cart {
+  background: none;
+  background-color: transparent;
+  border: hidden;
+}
 /* * {
   box-sizing: border-box;
   margin: 0;
