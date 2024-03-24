@@ -8,13 +8,14 @@
   align-items: center;
   gap: 20px;
   padding-top: 140px;
+  padding-bottom: 1em;
 }
-
+body {
+  background-color: #d2d2d2;
+}
 .product-card {
   width: 225px;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
   box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
   background-color: #fff;
 }
@@ -26,7 +27,6 @@
 .product-image {
   height: 300px;
   overflow: hidden;
-  margin-bottom: 90px;
   margin-top: 10px;
   padding: 10px;
 }
@@ -45,7 +45,6 @@
 
 .product-details {
   padding: 20px;
-  margin-top: -90px;
 }
 
 .product-title {
@@ -61,7 +60,9 @@
 
 .product-description {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.25;
+  text-align: center;
+
   margin-bottom: 10px;
   color: #666;
 }
@@ -89,6 +90,136 @@
   align-items: center; */
 }
 
+/* 
+
+
+
+
+
+*/
+.cart-button {
+  position: relative;
+  outline: 0;
+  color: #fff;
+  border: none;
+  height: 48px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cart-button:focus {
+  outline: none !important;
+}
+
+.cart-button .fa-shopping-cart {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: -20%;
+  font-size: 1.8em;
+  transform: translate(-50%, -50%);
+}
+
+.cart-button .fa-square {
+  position: absolute;
+  z-index: 1;
+  top: -20%;
+  left: 53%;
+  font-size: 0.8em;
+  transform: translate(-50%, -50%);
+}
+
+.cart-button span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: #fff;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.cart-button span.added {
+  opacity: 0;
+}
+
+.cart-button.clicked .fa-shopping-cart {
+  animation: cart 1s ease-in forwards;
+}
+
+.cart-button.clicked .fa-square {
+  animation: box 1s ease-in forwards;
+}
+
+.cart-button.clicked span.add-to-cart-span {
+  animation: addcart 1s ease-in forwards;
+}
+
+.cart-button.clicked span.added {
+  animation: added 1s ease-in forwards;
+}
+
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+  40%,
+  60% {
+    left: 50%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes box {
+  0%,
+  40% {
+    top: -20%;
+  }
+  60% {
+    top: 36%;
+    left: 53%;
+  }
+  100% {
+    top: 40%;
+    left: 112%;
+  }
+}
+
+@keyframes addcart {
+  0%,
+  30% {
+    opacity: 1;
+  }
+  30%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes added {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 
+
+
+
+
+
+
+*/
+
 .add-to-cart {
   padding: 10px 20px;
   border: none;
@@ -100,7 +231,7 @@
 }
 
 .add-to-cart {
-  background-color: #666;
+  background-color: #5c5c5c;
 }
 
 .compare {
@@ -113,26 +244,24 @@
   opacity: 0.8;
 }
 
-/* CSS for the modal */
 .modal {
-  display: none; /* Hide the modal by default */
-  position: fixed; /* Position the modal */
-  z-index: 1; /* Set z-index to ensure it appears above other elements */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scrolling if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Style the modal content */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* Center the modal vertically and horizontally */
+  background-color: #d2d2d2;
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Set width of the modal */
+  width: 80%;
 }
 
 /* Close button style */
@@ -147,5 +276,20 @@
 .close:focus {
   color: black;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.checkoutbutton {
+  position: relative;
+  outline: 0;
+  color: #fff;
+  background-color: #5c5c5c;
+  border: none;
+  height: 48px;
+  /* width: 100%; */
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 0px;
+  overflow: hidden;
   cursor: pointer;
 }
