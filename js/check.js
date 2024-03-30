@@ -9,12 +9,57 @@ function updateCartModal() {
 
   cartContent.innerHTML = "";
 
-  cart.forEach(function (cartItem) {
+  cart.forEach(function (cartItem, index) {
     var listItem = document.createElement("li");
-    listItem.textContent = cartItem.item + " - " + cartItem.price;
+
+    // Create span element for item and price
+    var itemSpan = document.createElement("span");
+    itemSpan.textContent = cartItem.item + " - " + cartItem.price;
+    listItem.appendChild(itemSpan);
+
+    // Create SVG element
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "24");
+    svg.setAttribute("height", "24");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "2");
+    svg.setAttribute("stroke-linecap", "round");
+    svg.setAttribute("stroke-linejoin", "round");
+    svg.setAttribute("class", "feather feather-x");
+
+    // Create lines for the "x" icon
+    var line1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line1.setAttribute("x1", "18");
+    line1.setAttribute("y1", "6");
+    line1.setAttribute("x2", "6");
+    line1.setAttribute("y2", "18");
+    svg.appendChild(line1);
+
+    var line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line2.setAttribute("x1", "6");
+    line2.setAttribute("y1", "6");
+    line2.setAttribute("x2", "18");
+    line2.setAttribute("y2", "18");
+    svg.appendChild(line2);
+
+    // Add click event listener to remove the item from the cart
+    svg.addEventListener("click", function () {
+      cart.splice(index, 1); // Remove item from cart
+      updateCartModal(); // Update cart modal
+    });
+
+    // Append SVG to listItem
+    listItem.appendChild(svg);
+
+    // Append listItem to cartContent
     cartContent.appendChild(listItem);
   });
 }
+
+// Rest of the code remains unchanged
 
 function closeCartModal() {
   var cartModal = document.getElementById("cartModal");
