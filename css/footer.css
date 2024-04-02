@@ -89,10 +89,6 @@ table {
     grid-template-columns: 30% 30% 40%;
     gap: 5px;
   }
-  .map__iframe {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
   .map {
     overflow-wrap: anywhere;
     position: relative;

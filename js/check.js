@@ -24,7 +24,7 @@ function updateCartModal() {
     svg.setAttribute("height", "24");
     svg.setAttribute("viewBox", "0 0 24 24");
     svg.setAttribute("fill", "none");
-    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke", "red");
     svg.setAttribute("stroke-width", "2");
     svg.setAttribute("stroke-linecap", "round");
     svg.setAttribute("stroke-linejoin", "round");
@@ -45,10 +45,9 @@ function updateCartModal() {
     line2.setAttribute("y2", "18");
     svg.appendChild(line2);
 
-    // Add click event listener to remove the item from the cart
     svg.addEventListener("click", function () {
-      cart.splice(index, 1); // Remove item from cart
-      updateCartModal(); // Update cart modal
+      cart.splice(index, 1);
+      updateCartModal();
     });
 
     // Append SVG to listItem
