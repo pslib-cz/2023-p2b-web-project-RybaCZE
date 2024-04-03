@@ -4,25 +4,32 @@
   padding-top: 69px;
   align-items: center;
 }
-#gallery h2 {
-  text-align: center;
-}
+
 #gallery {
   background: #d2d2d2;
 }
+
+#gallery h2 {
+  text-align: center;
+}
+
 .back {
   width: auto;
 }
+
 .gallery__header {
   align-content: center;
 }
+
 .gallery__top__text {
   margin-top: 1em;
   height: 50px;
 }
+
 .gallery img {
   object-fit: cover;
   transition: transform 0.2s ease-in-out;
+  border-radius: 15px;
 }
 
 .gallery img.ratio4to3 {
@@ -33,15 +40,11 @@
   aspect-ratio: 3 / 4;
 }
 
-.gallery img {
-  border-radius: 15px;
-  height: 100%;
-  object-fit: cover;
-}
 .gallery__item {
   object-fit: cover;
   width: 100%;
 }
+
 .gallery__items {
   padding-right: 0.8em;
   padding-left: 0.8em;
@@ -52,6 +55,7 @@
   column-gap: 10px;
   align-content: center;
 }
+
 @media screen and (min-width: 320px) {
   .gallery__items {
     display: grid;
