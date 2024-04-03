@@ -56,6 +56,7 @@ table {
   align-items: center;
   grid-template-columns: 30% 30% 40%;
   gap: 5px;
+  /* padding-bottom: 1.5em; */
 }
 .spacer {
   height: 1em;
@@ -64,9 +65,25 @@ a {
   text-decoration: none;
   color: black;
 }
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1400px) and (max-width: 1800px) {
   .footer__container {
-    grid-template-rows: calc(var(--responsive-size) * 12);
+    grid-template-rows: calc(var(--responsive-size) * 14.5);
+  }
+  .map__iframe {
+    height: calc(var(--responsive-size) * 10.5);
+  }
+}
+@media screen and (min-width: 1800px) and (max-width: 2300px) {
+  .footer__container {
+    grid-template-rows: calc(var(--responsive-size) * 13.5);
+  }
+  .map__iframe {
+    height: calc(var(--responsive-size) * 10.5);
+  }
+}
+@media screen and (min-width: 2300px) and (max-width: 3000px) {
+  .footer__container {
+    grid-template-rows: calc(var(--responsive-size) * 12.5);
   }
   .map__iframe {
     height: calc(var(--responsive-size) * 10.5);
