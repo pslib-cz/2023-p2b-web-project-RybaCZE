@@ -27,6 +27,7 @@ function updateCartModal() {
     var div = document.createElement("div");
     div.classList.add("cart-item");
     listItem.appendChild(div);
+
     // Create img element for product image
     var img = document.createElement("img");
     img.src = cartItem.imageSrc;
@@ -38,20 +39,40 @@ function updateCartModal() {
     itemSpan.textContent = cartItem.item + " - " + cartItem.price;
     div.appendChild(itemSpan);
 
+    // Create div element for quantity input
+    var divInput = document.createElement("div");
+    divInput.classList.add("qty-input");
+
+    // Create button for decreasing quantity
+    var buttonMinus = document.createElement("button");
+    buttonMinus.type = "button";
+    buttonMinus.classList.add("qty-count");
+    buttonMinus.classList.add("qty-count--minus");
+    buttonMinus.dataset.action = "minus";
+    divInput.appendChild(buttonMinus);
+
     // Create input element for count
     var countInput = document.createElement("input");
     countInput.min = 1;
     countInput.max = 999;
     countInput.step = 1;
+    countInput.classList.add("product-qty");
+    countInput.name = "product-qty";
     countInput.autocomplete = "off";
     countInput.type = "number";
     countInput.value = cartItem.count;
-    countInput.addEventListener("change", function () {
-      cartItem.count = parseInt(countInput.value);
+    divInput.appendChild(countInput);
 
-      updateCartModal();
-    });
-    div.appendChild(countInput);
+    // Create button for increasing quantity
+    var buttonPlus = document.createElement("button");
+    buttonPlus.type = "button";
+    buttonPlus.classList.add("qty-count");
+    buttonPlus.classList.add("qty-count--add");
+    buttonPlus.dataset.action = "add";
+    divInput.appendChild(buttonPlus);
+
+    // Append quantity input elements to cart item div
+    div.appendChild(divInput);
 
     // Create span element for total price
     var totalPriceSpan = document.createElement("span");
@@ -97,9 +118,45 @@ function updateCartModal() {
 
     // Append listItem to cartContent
     cartContent.appendChild(listItem);
+
+    // Add event listeners for plus and minus buttons
+    buttonPlus.addEventListener("click", function () {
+      if (cartItem.count < 999) {
+        // Check if count is below 999
+        cartItem.count++;
+        updateCartModal();
+      }
+    });
+
+    buttonMinus.addEventListener("click", function () {
+      if (cartItem.count > 1) {
+        cartItem.count--;
+        updateCartModal();
+      }
+    });
+
+    // Add event listener for change event
+    countInput.addEventListener("change", function () {
+      var value = parseInt(countInput.value);
+      if (!isNaN(value)) {
+        if (value < 1) {
+          value = 1; // Set minimum value to 1
+        } else if (value > 999) {
+          value = 999; // Set maximum value to 999
+        }
+        cartItem.count = value;
+      } else {
+        // If the input is not a valid number, reset it to the previous value
+        countInput.value = cartItem.count;
+      }
+      updateCartModal(); // Update the cart modal after handling input
+    });
   });
 }
 
+// Rest of the code remains unchanged
+
+//#region cart
 function closeCartModal() {
   var cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
@@ -175,7 +232,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }, 2200);
   }
 });
+//#endregion
 
+//#region pay
 var stripe = Stripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 var elements = stripe.elements();
 
@@ -214,3 +273,4 @@ document.querySelector("form").addEventListener("submit", function (e) {
   };
   stripe.createToken(card, options).then(setOutcome);
 });
+//#endregion

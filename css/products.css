@@ -539,11 +539,9 @@ form {
   overflow: hidden;
   cursor: pointer;
 }
-.cart-content {
-  list-style: none;
-}
 .cart-item {
   display: flex;
+  font-size: 1.2em;
   justify-content: space-evenly;
   align-items: center;
   border-bottom: 1px solid #ddd;
@@ -555,6 +553,91 @@ form {
   object-fit: contain;
   border-radius: 5px;
 }
+/* input buttons */
+
+.qty-input {
+  --border-color: #929292;
+  color: #000;
+  background: #c4c4c4;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.qty-input .product-qty,
+.qty-input .qty-count {
+  background: transparent;
+  color: inherit;
+  font-weight: bold;
+  font-size: inherit;
+  border: none;
+  display: inline-block;
+  min-width: 0;
+  height: 1.3em;
+  line-height: 1;
+}
+.qty-input .product-qty:focus,
+.qty-input .qty-count:focus {
+  outline: none;
+}
+.qty-input .product-qty {
+  width: 30px;
+  min-width: 0;
+  font-size: 0.7em;
+  display: inline-block;
+  text-align: center;
+}
+.qty-input .product-qty::-webkit-outer-spin-button,
+.qty-input .product-qty::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.qty-input .qty-count {
+  padding: 0;
+  cursor: pointer;
+  width: 1.2em;
+  /* font-size: 1em; */
+  overflow: hidden;
+  position: relative;
+}
+.qty-input .qty-count:before,
+.qty-input .qty-count:after {
+  content: "";
+  height: 2px;
+  width: 10px;
+  position: absolute;
+  display: block;
+  background: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.qty-input .qty-count--minus {
+  border-right: 1px solid var(--border-color);
+}
+.qty-input .qty-count--add {
+  border-left: 1px solid var(--border-color);
+}
+.qty-input .qty-count--add:after {
+  transform: rotate(90deg);
+}
+.qty-input .qty-count:disabled {
+  color: #ccc;
+  background: #f2f2f2;
+  cursor: not-allowed;
+  border-color: transparent;
+}
+.qty-input .qty-count:disabled:before,
+.qty-input .qty-count:disabled:after {
+  background: #ccc;
+}
+
+.qty-input {
+  border-radius: 4px;
+  transform: scale(1.5);
+}
+
 /* #region pay */
 
 .cartModal-checkout-form {
