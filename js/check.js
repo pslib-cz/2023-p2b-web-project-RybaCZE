@@ -1,7 +1,20 @@
 var cart = [];
+function addToCart(item, price, imageSrc) {
+  // Log the imageSrc value
+  // Check if the item already exists in the cart
+  var existingItem = cart.find(function (cartItem) {
+    return cartItem.item === item;
+  });
 
-function addToCart(item, price) {
-  cart.push({ item: item, price: price });
+  if (existingItem) {
+    // If the item already exists, increase its count
+    existingItem.count++;
+  } else {
+    // If the item doesn't exist, add it to the cart with count 1
+    cart.push({ item: item, price: price, count: 1, imageSrc: imageSrc });
+  }
+
+  updateCartModal();
 }
 
 function updateCartModal() {
@@ -9,15 +22,44 @@ function updateCartModal() {
 
   cartContent.innerHTML = "";
 
-  cart.forEach(function (cartItem, index) {
+  cart.forEach(function (cartItem) {
     var listItem = document.createElement("li");
+    var div = document.createElement("div");
+    div.classList.add("cart-item");
+    listItem.appendChild(div);
+    // Create img element for product image
+    var img = document.createElement("img");
+    img.src = cartItem.imageSrc;
+    img.alt = cartItem.item;
+    div.appendChild(img);
 
     // Create span element for item and price
     var itemSpan = document.createElement("span");
     itemSpan.textContent = cartItem.item + " - " + cartItem.price;
-    listItem.appendChild(itemSpan);
+    div.appendChild(itemSpan);
 
-    // Create SVG element
+    // Create input element for count
+    var countInput = document.createElement("input");
+    countInput.min = 1;
+    countInput.max = 999;
+    countInput.step = 1;
+    countInput.autocomplete = "off";
+    countInput.type = "number";
+    countInput.value = cartItem.count;
+    countInput.addEventListener("change", function () {
+      cartItem.count = parseInt(countInput.value);
+
+      updateCartModal();
+    });
+    div.appendChild(countInput);
+
+    // Create span element for total price
+    var totalPriceSpan = document.createElement("span");
+    totalPriceSpan.textContent =
+      cartItem.count * parseInt(cartItem.price) + " Kč";
+    div.appendChild(totalPriceSpan);
+
+    // Create SVG element for remove button
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     svg.setAttribute("width", "24");
@@ -46,19 +88,17 @@ function updateCartModal() {
     svg.appendChild(line2);
 
     svg.addEventListener("click", function () {
-      cart.splice(index, 1);
+      cart.splice(cart.indexOf(cartItem), 1);
       updateCartModal();
     });
 
     // Append SVG to listItem
-    listItem.appendChild(svg);
+    div.appendChild(svg);
 
     // Append listItem to cartContent
     cartContent.appendChild(listItem);
   });
 }
-
-// Rest of the code remains unchanged
 
 function closeCartModal() {
   var cartModal = document.getElementById("cartModal");
@@ -95,6 +135,7 @@ window.onload = function () {
   addToCartButtons.forEach(function (button) {
     button.addEventListener("click", function (event) {
       var productDetails = event.target.closest(".product-details"); // Find the closest ancestor with class '.product-details'
+      var productCard = event.target.closest(".product-card"); // Find the closest ancestor with class '.product-details'
       if (!productDetails) {
         console.error("Product details element not found.");
         return;
@@ -102,6 +143,9 @@ window.onload = function () {
 
       var item = productDetails.querySelector(".product-title");
       var price = productDetails.querySelector(".product-price");
+      var img = productCard
+        .querySelector(".product-image img")
+        .getAttribute("src");
 
       if (!item || !price) {
         console.error(
@@ -110,8 +154,9 @@ window.onload = function () {
         return;
       }
 
-      addToCart(item.textContent, price.textContent);
+      addToCart(item.textContent, price.textContent, img);
       updateCartModal();
+      img = "";
     });
   });
 };

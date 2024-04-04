@@ -7,7 +7,9 @@
 .navbar-item {
   font-size: 1.4em;
 }
-
+.home-link {
+  font-size: 2em;
+}
 @media screen and (max-width: 700px) {
   .navbar-item:not(:last-child) {
     border-bottom: 1px solid #000000;
