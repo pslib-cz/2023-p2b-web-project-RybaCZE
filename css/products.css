@@ -599,6 +599,12 @@ form {
   overflow: hidden;
   position: relative;
 }
+
+.cart-item * {
+  margin: auto;
+}
+/* !!!! */
+
 .qty-input .qty-count:before,
 .qty-input .qty-count:after {
   content: "";
