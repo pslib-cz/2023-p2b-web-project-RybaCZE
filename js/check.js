@@ -1,4 +1,5 @@
 var cart = [];
+
 function addToCart(item, price, imageSrc) {
   // Log the imageSrc value
   // Check if the item already exists in the cart
@@ -35,8 +36,14 @@ function updateCartModal() {
     div.appendChild(img);
 
     // Create span element for item and price
+    var itemSpanName = document.createElement("span");
+    itemSpanName.classList.add("item-name");
+    itemSpanName.textContent = cartItem.item;
+    div.appendChild(itemSpanName);
+
     var itemSpan = document.createElement("span");
-    itemSpan.textContent = cartItem.item + " - " + cartItem.price;
+    itemSpan.classList.add("item-price");
+    itemSpan.textContent = cartItem.price;
     div.appendChild(itemSpan);
 
     // Create div element for quantity input
@@ -76,12 +83,14 @@ function updateCartModal() {
 
     // Create span element for total price
     var totalPriceSpan = document.createElement("span");
+    totalPriceSpan.classList.add("total-price");
     totalPriceSpan.textContent =
       cartItem.count * parseInt(cartItem.price) + " Kč";
     div.appendChild(totalPriceSpan);
 
     // Create SVG element for remove button
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.classList.add("remove-item-ico");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     svg.setAttribute("width", "24");
     svg.setAttribute("height", "24");
@@ -91,7 +100,7 @@ function updateCartModal() {
     svg.setAttribute("stroke-width", "2");
     svg.setAttribute("stroke-linecap", "round");
     svg.setAttribute("stroke-linejoin", "round");
-    svg.setAttribute("class", "feather feather-x");
+    svg.setAttribute("class", "feather feather-x remove-item-ico");
 
     // Create lines for the "x" icon
     var line1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -113,16 +122,10 @@ function updateCartModal() {
       updateCartModal();
     });
 
-    // Append SVG to listItem
     div.appendChild(svg);
-
-    // Append listItem to cartContent
     cartContent.appendChild(listItem);
-
-    // Add event listeners for plus and minus buttons
     buttonPlus.addEventListener("click", function () {
       if (cartItem.count < 999) {
-        // Check if count is below 999
         cartItem.count++;
         updateCartModal();
       }
@@ -135,26 +138,22 @@ function updateCartModal() {
       }
     });
 
-    // Add event listener for change event
     countInput.addEventListener("change", function () {
       var value = parseInt(countInput.value);
       if (!isNaN(value)) {
         if (value < 1) {
-          value = 1; // Set minimum value to 1
+          value = 1;
         } else if (value > 999) {
-          value = 999; // Set maximum value to 999
+          value = 999;
         }
         cartItem.count = value;
       } else {
-        // If the input is not a valid number, reset it to the previous value
         countInput.value = cartItem.count;
       }
-      updateCartModal(); // Update the cart modal after handling input
+      updateCartModal();
     });
   });
 }
-
-// Rest of the code remains unchanged
 
 //#region cart
 function closeCartModal() {
@@ -163,6 +162,9 @@ function closeCartModal() {
 }
 
 function openCartModal() {
+  if (cart.length == 0) {
+    return;
+  }
   updateCartModal();
   var cartModal = document.getElementById("cartModal");
   cartModal.style.display = "block";
@@ -182,10 +184,15 @@ window.onload = function () {
 
   var checkoutButton = document.getElementById("checkoutButton");
   checkoutButton.addEventListener("click", function () {
-    // Add your checkout functionality here
     console.log("Checkout button clicked!");
     OpenCartModalcheckout();
     closeCartModal();
+  });
+
+  var backButton = document.getElementById("backButton");
+  backButton.addEventListener("click", function () {
+    closeCartModalcheckout();
+    openCartModal();
   });
 
   var addToCartButtons = document.querySelectorAll(".add-to-cart");
@@ -232,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }, 2200);
   }
 });
+
 //#endregion
 
 //#region pay

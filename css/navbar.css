@@ -246,6 +246,11 @@ html {
   padding: 0.18em 0.6em;
   max-height: 1.2em;
 }
+@media screen and (max-width: 400px) {
+  .home-link {
+    font-size: 1.5em;
+  }
+}
 @media screen and (min-width: 900px) {
   .navbar-toggle {
     display: none;
