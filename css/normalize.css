@@ -108,6 +108,9 @@ button,
 select {
   text-transform: none;
 }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 button,
 [type="button"],
@@ -159,6 +162,8 @@ textarea {
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 [type="search"] {
