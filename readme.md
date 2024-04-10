@@ -10,8 +10,7 @@
 
 1. **O nás a nabídka značek:**
    - Stručný popis opravny a její historie
-   - Seznam nabízených služeb včetně oprav značkových produktů
-   - Přehled dostupných značek, které jsou opravovány
+   - Přehled dostupných značek, které jsou opravovány a prodávány
 2. **Produkty:**
    - Grid kartiček s produkty, které opravna Bárta nabízí
    - Detailní informace o každém produktu a možnost objednání
