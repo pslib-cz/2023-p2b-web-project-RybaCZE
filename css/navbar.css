@@ -77,9 +77,6 @@ main {
 .home-link:hover {
   color: var(--navbar-text-color-focus);
 }
-html {
-  scroll-behavior: smooth;
-}
 .navbar-link {
   justify-content: center;
   white-space: nowrap;
