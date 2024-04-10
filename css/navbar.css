@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Ballon";
+  src: url("../fonts/balonxb.ttf") format("truetype");
+}
+.navbar--header {
+  font-family: "Ballon";
+}
 :root {
   --navbar-bg-color: #f37a1f;
   --navbar-text-color: #000000;

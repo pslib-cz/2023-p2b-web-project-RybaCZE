@@ -1,11 +1,6 @@
 /* OFFER */
 #offer {
-  background-color: #d2d2d2;
-  background-image: linear-gradient(
-    180deg,
-    rgba(237, 238, 240, 1) 0%,
-    rgba(210, 210, 210, 1) 8%
-  );
+  background-color: rgb(210, 210, 210);
 }
 
 #offer::before {
@@ -53,17 +48,17 @@
 }
 
 @media screen and (min-width: 730px) {
-  .logo__stihl_a {
+  .logo--stihl-a {
     grid-column: 1/3;
     grid-row: 1/2;
   }
 
-  .logo__jikov_a {
+  .logo--jikov-a {
     grid-row: 1/2;
     grid-column: 3/5;
   }
 
-  .logo__fiskars_a {
+  .logo--fiskars-a {
     padding-top: 1em;
     grid-row: 2/3;
     grid-column: 2/4;
@@ -99,7 +94,7 @@
   background-color: #edeef0;
 }
 
-.about__body {
+.about--body {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
@@ -110,7 +105,7 @@
 }
 
 @media screen and (min-width: 760px) {
-  .about__body {
+  .about--body {
     text-align: justify;
   }
 }
@@ -128,7 +123,7 @@
   }
 }
 
-.about__images {
+.about--images {
   padding-bottom: 1em;
 }
 

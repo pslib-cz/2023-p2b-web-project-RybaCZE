@@ -2,7 +2,7 @@ body {
   background-color: #d2d2d2;
 }
 
-.container__cards {
+.container--cards {
   margin: auto;
   display: flex;
   max-width: calc(1080px + 1.2em);
@@ -92,7 +92,7 @@ body {
 }
 
 @media screen and (min-width: 426px) {
-  .container__cards {
+  .container--cards {
     padding-top: 140px;
   }
   .product-image {

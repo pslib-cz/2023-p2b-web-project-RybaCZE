@@ -17,11 +17,11 @@
   width: auto;
 }
 
-.gallery__header {
+.gallery--header {
   align-content: center;
 }
 
-.gallery__top__text {
+.gallery--top--text {
   margin-top: 1em;
   height: 50px;
 }
@@ -40,12 +40,12 @@
   aspect-ratio: 3 / 4;
 }
 
-.gallery__item {
+.gallery--item {
   object-fit: cover;
   width: 100%;
 }
 
-.gallery__items {
+.gallery--items {
   padding-right: 0.8em;
   padding-left: 0.8em;
   gap: 1em;
@@ -57,7 +57,7 @@
 }
 
 @media screen and (min-width: 320px) {
-  .gallery__items {
+  .gallery--items {
     display: grid;
     grid-template-columns: auto auto;
     grid-auto-rows: auto;
@@ -66,7 +66,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .gallery__items {
+  .gallery--items {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-auto-rows: auto;
