@@ -1,3 +1,4 @@
+//#region Navbar
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.getElementById("navbar");
   const navbarToggle = navbar.querySelector(".navbar-toggle");
@@ -39,6 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Navbar menu or links container not found.");
   }
 });
-
+//#endregion
 var currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear;

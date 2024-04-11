@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Ballon";
+  src: url("../fonts/balonxb.ttf") format("truetype");
+}
+.navbar--header {
+  font-family: "Ballon";
+}
 :root {
   --navbar-bg-color: #f37a1f;
   --navbar-text-color: #000000;
@@ -5,27 +12,28 @@
   --navbar-bg-contrast: #ce9c53;
 }
 .navbar-item {
-  font-size: 1.1em;
+  font-size: 1.4em;
 }
-
-@media (max-width: 700px) {
+.home-link {
+  font-size: 2em;
+}
+@media screen and (max-width: 700px) {
   .navbar-item:not(:last-child) {
     border-bottom: 1px solid #000000;
   }
 }
-.navbar-link__cart {
+.navbar-item-ico a {
+  padding: 0;
+  margin: 0;
+}
+.navbar-item-ico img {
+  height: 100%;
+}
+.navbar-item-ico {
   background: none;
   background-color: transparent;
   border: hidden;
-}
-/* * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
-html {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.4;
+  scale: 1.4;
 }
 
 main {
@@ -36,7 +44,7 @@ main {
 }
 
 .container {
-  max-width: 1080px;
+  max-width: calc(1080px + 1.2em);
   margin-left: auto;
   margin-right: auto;
 }
@@ -76,12 +84,9 @@ main {
 .home-link:hover {
   color: var(--navbar-text-color-focus);
 }
-html {
-  scroll-behavior: smooth;
-}
 .navbar-link {
   justify-content: center;
-  width: 100%;
+  white-space: nowrap;
   padding: 0.4em 0.8em;
   border-radius: 5px;
 }
@@ -241,6 +246,15 @@ html {
   width: 100%;
 }
 
+.navbar-item-cart {
+  padding: 0.18em 0.6em;
+  max-height: 1.2em;
+}
+@media screen and (max-width: 400px) {
+  .home-link {
+    font-size: 1.5em;
+  }
+}
 @media screen and (min-width: 900px) {
   .navbar-toggle {
     display: none;

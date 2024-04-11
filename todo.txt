@@ -1,1 +1,22 @@
 
+vůbec to není špatné 
+je to obří (náhledy by měly být náhledy něco jako 300×200 a ne 3000×2000px), vykašlal bych se na nějaké pokusy o <picture> tagy a rovnou do <img> cpal ty zmenšené, komprimované webp...
+dtto v produktech - na webu už vůbec png nemá co dělat... nahradit webp, malé náhledy
+je to obrovksé - ten pokus o responzivní fontsize se moc nevyvedl. Zůstal bych u 16 px...
+celé to "row about__images" je nějaké divné a řešil bych to jen stylem (::after) nebo alespoň position ale ne float
+to samé "transition". Tak buď to patří na konec "about" nebo na začátek "offer"... takhle to je nějak ve vzduchoprázdnu. IMHO to je jen přechod na začátku toho "offer"
+dávat <button type="button" a pak se ho snažit zbavit...  Není jednodušší ho tam prostě nedat?  Co třeba <div>?
+Tohle je fuj - je to jako nosit ponožky naruby... Jde to...
+<a href="/" class="home-link navbar__header">
+<h1>Opravárna Bárta</h1>
+</a>
+<h2 class="product-title">Kladivo</h2>
+je to fakt nadpis? Asi to není špatně, ale...
+
+target="_blank" lidi sere a google nemá rád
+
+Ten "modal" formulář se mi líbí
+
+
+
+vidím dost css "overheadu" - jako že něco stylem rozbijete a jinde to zase jiným stylem opravujete... ono by stačilo to jen nechat žít - tak 30 % kódu bych uměl odstranit a ono by to fungovalo stejně/lépe...
