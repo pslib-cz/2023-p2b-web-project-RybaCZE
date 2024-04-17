@@ -8,8 +8,11 @@ function addToCart(item, price, imageSrc) {
   });
 
   if (existingItem) {
-    // If the item already exists, increase its count
-    existingItem.count++;
+    if (existingItem.count < 999) {
+      existingItem.count++;
+    } else {
+      return;
+    }
   } else {
     // If the item doesn't exist, add it to the cart with count 1
     cart.push({ item: item, price: price, count: 1, imageSrc: imageSrc });
@@ -20,9 +23,12 @@ function addToCart(item, price, imageSrc) {
 
 function updateCartModal() {
   var cartContent = document.getElementById("cartContent");
+  // var payButton = document.querySelector("paybutton");
+  var payButton = document.getElementsByClassName("paybutton")[0];
+  // console.log(payButton.textContent);
+  var total = 0;
 
   cartContent.innerHTML = "";
-
   cart.forEach(function (cartItem) {
     var listItem = document.createElement("li");
     var div = document.createElement("div");
@@ -44,8 +50,9 @@ function updateCartModal() {
     var itemSpan = document.createElement("span");
     itemSpan.classList.add("item-price");
     itemSpan.textContent = cartItem.price;
+    total += cartItem.count * parseInt(cartItem.price);
     div.appendChild(itemSpan);
-
+    payButton.textContent = "Zaplatit " + total + " Kč";
     // Create div element for quantity input
     var divInput = document.createElement("div");
     divInput.classList.add("qty-input");
